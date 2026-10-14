@@ -36,7 +36,8 @@ int main(int argc, char **argv, char **env) {
 		top->rst = (i < 2) | (i == 15);
 		top->en = vbdFlag(); // decides where to reset value to what ever is next line. 
                  // makes sure when the frequency changes you keep the same x. 
-		if (vbdFlag()) top->freq = vbdValue(); // sets new value
+		  top->freq = vbdValue(); // sets new value
+		 
 		if ((Verilated::gotFinish()) || (vbdGetkey()=='q'))  exit(0);
 	}
 	vbdClose();

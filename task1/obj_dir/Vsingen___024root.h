@@ -21,10 +21,12 @@ class alignas(VL_CACHE_LINE_BYTES) Vsingen___024root final : public VerilatedMod
     VL_IN8(en,0,0);
     VL_OUT8(dout,7,0);
     CData/*7:0*/ singen__DOT__addr;
+    CData/*7:0*/ singen__DOT__cur_freq;
     CData/*0:0*/ __Vtrigprevexpr___TOP__clk__0;
     CData/*0:0*/ __VactContinue;
     IData/*31:0*/ __VactIterCount;
     VlUnpacked<CData/*7:0*/, 256> singen__DOT__sinevals__DOT__rom_array;
+    VlUnpacked<CData/*0:0*/, 2> __Vm_traceActivity;
     VlTriggerVec<1> __VactTriggered;
     VlTriggerVec<1> __VnbaTriggered;
 

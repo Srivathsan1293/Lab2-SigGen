@@ -22,6 +22,7 @@ void Vsingen___024root___eval_nba(Vsingen___024root* vlSelf) {
     // Body
     if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         Vsingen___024root___nba_sequent__TOP__0(vlSelf);
+        vlSelfRef.__Vm_traceActivity[1U] = 1U;
     }
 }
 
@@ -35,14 +36,19 @@ VL_INLINE_OPT void Vsingen___024root___nba_sequent__TOP__0(Vsingen___024root* vl
     __Vdly__singen__DOT__addr = 0;
     // Body
     __Vdly__singen__DOT__addr = vlSelfRef.singen__DOT__addr;
-    __Vdly__singen__DOT__addr = ((IData)(vlSelfRef.rst)
-                                  ? 0U : (0xffU & ((IData)(vlSelfRef.en)
-                                                    ? (IData)(vlSelfRef.incr)
-                                                    : 
-                                                   ((IData)(1U) 
-                                                    + (IData)(vlSelfRef.singen__DOT__addr)))));
     vlSelfRef.dout = vlSelfRef.singen__DOT__sinevals__DOT__rom_array
-        [(0xffU & ((IData)(vlSelfRef.freq) * (IData)(vlSelfRef.singen__DOT__addr)))];
+        [(0xffU & ((IData)(vlSelfRef.singen__DOT__addr) 
+                   * (IData)(vlSelfRef.singen__DOT__cur_freq)))];
+    if (vlSelfRef.rst) {
+        __Vdly__singen__DOT__addr = 0U;
+        vlSelfRef.singen__DOT__cur_freq = 1U;
+    } else if (vlSelfRef.en) {
+        __Vdly__singen__DOT__addr = (0xffU & (IData)(vlSelfRef.incr));
+        vlSelfRef.singen__DOT__cur_freq = vlSelfRef.freq;
+    } else {
+        __Vdly__singen__DOT__addr = (0xffU & ((IData)(1U) 
+                                              + (IData)(vlSelfRef.singen__DOT__addr)));
+    }
     vlSelfRef.singen__DOT__addr = __Vdly__singen__DOT__addr;
 }
 

@@ -100,8 +100,12 @@ VL_ATTR_COLD void Vsingen___024root___ctor_var_reset(Vsingen___024root* vlSelf) 
     vlSelf->clk = VL_RAND_RESET_I(1);
     vlSelf->dout = VL_RAND_RESET_I(8);
     vlSelf->singen__DOT__addr = VL_RAND_RESET_I(8);
+    vlSelf->singen__DOT__cur_freq = VL_RAND_RESET_I(8);
     for (int __Vi0 = 0; __Vi0 < 256; ++__Vi0) {
         vlSelf->singen__DOT__sinevals__DOT__rom_array[__Vi0] = VL_RAND_RESET_I(8);
     }
     vlSelf->__Vtrigprevexpr___TOP__clk__0 = VL_RAND_RESET_I(1);
+    for (int __Vi0 = 0; __Vi0 < 2; ++__Vi0) {
+        vlSelf->__Vm_traceActivity[__Vi0] = 0;
+    }
 }

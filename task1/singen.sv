@@ -9,8 +9,15 @@ module singen (
     counter counter (.clk(clk), .rst(rst), .ld(en), .v(incr), .count(addr));
 
     logic [7:0] adj_addr;
+    logic [7:0] cur_freq;
 
-    assign adj_addr = addr * freq;
+always_ff @(posedge clk) begin
+    if (rst) 
+        cur_freq <= 8'd1;     // Set a default frequency on reset
+    else if (en) 
+        cur_freq <= freq;     // Lock in the new frequency when 'en' is high
+end
+    assign adj_addr = addr * cur_freq;
     rom sinevals (.clk(clk), .addr(adj_addr), .dout(dout));
 endmodule
 
