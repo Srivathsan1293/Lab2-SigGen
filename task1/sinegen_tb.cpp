@@ -12,13 +12,14 @@ int main(int argc, char **argv, char **env) {
 	tfp->open("singen.vcd");
 
 	if (vbdOpen() != 1) return(-1);
-	vbdHeader("Lab 2: sine gen");
-    vbdSetMode(1);
+	vbdHeader("Lab 2: sinegen");
+        vbdSetMode(1);
         
 	top->clk = 1;
 	top->rst = 1;
 	top->en = 0;
-    top->incr = 1;
+        top->incr = 1;
+        top->freq = 1;
 
 	for (int i = 0; i < 1000000; i++) {
 		// 1. ALWAYS dump time, toggle the clock, and evaluate the model
@@ -34,8 +35,8 @@ int main(int argc, char **argv, char **env) {
 		// 2. Change the reset stimulus so it doesn't interrupt us at i==15
 		top->rst = (i < 2) | (i == 15);
 		top->en = vbdFlag(); // decides where to reset value to what ever is next line. 
-        top->incr = top->count; // makes sure when the frequency changes you keep the same x. 
-		top->freq = vbdValue(); // sets new value
+                 // makes sure when the frequency changes you keep the same x. 
+		if (vbdFlag()) top->freq = vbdValue(); // sets new value
 		if ((Verilated::gotFinish()) || (vbdGetkey()=='q'))  exit(0);
 	}
 	vbdClose();

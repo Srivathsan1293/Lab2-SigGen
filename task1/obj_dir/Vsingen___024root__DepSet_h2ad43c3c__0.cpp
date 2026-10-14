@@ -42,7 +42,7 @@ VL_INLINE_OPT void Vsingen___024root___nba_sequent__TOP__0(Vsingen___024root* vl
                                                    ((IData)(1U) 
                                                     + (IData)(vlSelfRef.singen__DOT__addr)))));
     vlSelfRef.dout = vlSelfRef.singen__DOT__sinevals__DOT__rom_array
-        [vlSelfRef.singen__DOT__addr];
+        [(0xffU & ((IData)(vlSelfRef.freq) * (IData)(vlSelfRef.singen__DOT__addr)))];
     vlSelfRef.singen__DOT__addr = __Vdly__singen__DOT__addr;
 }
 

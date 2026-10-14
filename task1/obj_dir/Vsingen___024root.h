@@ -16,6 +16,7 @@ class alignas(VL_CACHE_LINE_BYTES) Vsingen___024root final : public VerilatedMod
     // DESIGN SPECIFIC STATE
     VL_IN8(clk,0,0);
     VL_IN8(incr,7,0);
+    VL_IN8(freq,7,0);
     VL_IN8(rst,0,0);
     VL_IN8(en,0,0);
     VL_OUT8(dout,7,0);

@@ -1,5 +1,6 @@
 module singen (
-    input logic [7:0] incr, freq;
+    input logic [7:0] incr,
+    input logic [7:0] freq,
     input logic rst, en, clk,
     output logic [7:0] dout
 );

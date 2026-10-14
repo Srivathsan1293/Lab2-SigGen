@@ -25,11 +25,14 @@ void Vsingen___024root__trace_chg_0_sub_0(Vsingen___024root* vlSelf, VerilatedVc
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode + 1);
     // Body
     bufp->chgCData(oldp+0,(vlSelfRef.incr),8);
-    bufp->chgBit(oldp+1,(vlSelfRef.rst));
-    bufp->chgBit(oldp+2,(vlSelfRef.en));
-    bufp->chgBit(oldp+3,(vlSelfRef.clk));
-    bufp->chgCData(oldp+4,(vlSelfRef.dout),8);
-    bufp->chgCData(oldp+5,(vlSelfRef.singen__DOT__addr),8);
+    bufp->chgCData(oldp+1,(vlSelfRef.freq),8);
+    bufp->chgBit(oldp+2,(vlSelfRef.rst));
+    bufp->chgBit(oldp+3,(vlSelfRef.en));
+    bufp->chgBit(oldp+4,(vlSelfRef.clk));
+    bufp->chgCData(oldp+5,(vlSelfRef.dout),8);
+    bufp->chgCData(oldp+6,(vlSelfRef.singen__DOT__addr),8);
+    bufp->chgCData(oldp+7,((0xffU & ((IData)(vlSelfRef.freq) 
+                                     * (IData)(vlSelfRef.singen__DOT__addr)))),8);
 }
 
 void Vsingen___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

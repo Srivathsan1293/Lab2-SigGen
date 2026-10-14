@@ -12,6 +12,7 @@ Vsingen::Vsingen(VerilatedContext* _vcontextp__, const char* _vcname__)
     , vlSymsp{new Vsingen__Syms(contextp(), _vcname__, this)}
     , clk{vlSymsp->TOP.clk}
     , incr{vlSymsp->TOP.incr}
+    , freq{vlSymsp->TOP.freq}
     , rst{vlSymsp->TOP.rst}
     , en{vlSymsp->TOP.en}
     , dout{vlSymsp->TOP.dout}

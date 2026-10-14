@@ -94,6 +94,7 @@ VL_ATTR_COLD void Vsingen___024root___ctor_var_reset(Vsingen___024root* vlSelf) 
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     vlSelf->incr = VL_RAND_RESET_I(8);
+    vlSelf->freq = VL_RAND_RESET_I(8);
     vlSelf->rst = VL_RAND_RESET_I(1);
     vlSelf->en = VL_RAND_RESET_I(1);
     vlSelf->clk = VL_RAND_RESET_I(1);
