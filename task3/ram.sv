@@ -13,7 +13,12 @@ module ram #(
     always_ff @(posedge clk) begin
         if (wr_en == 1'b1) begin
             ram_array[wr_addr] <= din;
+        end
         if (rd_en == 1'b1) begin
             dout <= ram_array[rd_addr]; 
+        end
     end
+    
 endmodule 
+
+
