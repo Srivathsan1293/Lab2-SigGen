@@ -34,7 +34,8 @@ int main(int argc, char **argv, char **env) {
 		// 2. Change the reset stimulus so it doesn't interrupt us at i==15
 		top->rst = (i < 2) | (i == 15);
 		top->en = vbdFlag(); // decides where to reset value to what ever is next line. 
-		top->incr = vbdValue(); // sets new value
+        top->incr = top->count; // makes sure when the frequency changes you keep the same x. 
+		top->freq = vbdValue(); // sets new value
 		if ((Verilated::gotFinish()) || (vbdGetkey()=='q'))  exit(0);
 	}
 	vbdClose();
