@@ -20,7 +20,7 @@ int main(int argc, char **argv, char **env) {
 	top->en = 0;
     top->incr = 1;
 
-	for (i = 0; i < 1000000; i++) {
+	for (int i = 0; i < 1000000; i++) {
 		// 1. ALWAYS dump time, toggle the clock, and evaluate the model
 		for (int clk = 0; clk < 2; clk++) {
 			tfp->dump(2*i + clk);

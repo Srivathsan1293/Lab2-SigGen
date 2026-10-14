@@ -1,7 +1,7 @@
 module singen (
     input logic [7:0] incr,
     input logic rst, en, clk,
-    output logic [7:0] dout;
+    output logic [7:0] dout
 );
 
     logic [7:0] addr;
@@ -9,3 +9,5 @@ module singen (
 
     rom sinevals (.clk(clk), .addr(addr), .dout(dout));
 endmodule
+
+
